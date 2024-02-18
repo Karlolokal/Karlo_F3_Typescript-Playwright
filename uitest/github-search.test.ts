@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 test.setTimeout(60000); //timeout
 
 test('GitHub search test', async ({ page }) => {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   page = await browser.newPage();
 
   await page.goto('https://github.com');
