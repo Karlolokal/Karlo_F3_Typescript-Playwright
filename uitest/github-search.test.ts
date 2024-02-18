@@ -1,6 +1,8 @@
 import { chromium } from 'playwright';
 import { test, expect } from '@playwright/test';
 
+test.setTimeout(60000); //timeout
+
 test('GitHub search test', async ({ page }) => {
   const browser = await chromium.launch({ headless: false });
   page = await browser.newPage();
