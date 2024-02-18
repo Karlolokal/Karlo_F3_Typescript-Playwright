@@ -1,15 +1,22 @@
-import { chromium } from 'playwright';
-import { test, expect } from '@playwright/test';
+import { chromium } from "playwright";
+import { test, expect } from "@playwright/test";
+
+test.setTimeout(60000); //timeout
 
 // Define your test
 test('Google search for "Typescript"', async ({ page }) => {
-  await page.goto('https://google.com');
-  await page.fill('input[name=q]', 'Typescript');
-  await page.press('input[name=q]', 'Enter');
-//   await page.waitForNavigation();
+  const browser = await chromium.launch({ headless: false });
+  page = await browser.newPage();
+
+  await page.goto("https://google.com");
+
+  await page.fill("input[name='q']", 'typescript');
+
+  // Click the search button
+  await page.click("name='btnK'");
 
   // Add your assertions (optional)
-  await expect(page).toHaveTitle('Typescript - Google Search');
+  await expect(page).toHaveTitle("Typescript - Google Search");
 
   // You can add more test steps here if needed
 
