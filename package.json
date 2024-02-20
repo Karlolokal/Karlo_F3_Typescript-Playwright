@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "allUItest": "npx playwright test ./uitest_noCucumber/*.test.ts",
-    "test-ui": "cucumber-js ./uitest_withCucumber/*.feature --require uitest_withCucumber/*.ts"
+    "test-ui": "cucumber-js ./uitest_withCucumber/*.feature --require uitest_withCucumber/*.ts",
+    "test-ui-wTags": "cucumber-js ./uitest_withCucumber/*.feature --require uitest_withCucumber/*.ts --tags '@sampletest1'",
+    "debug": "pwd"
+
   },
   "keywords": [],
   "author": "",
