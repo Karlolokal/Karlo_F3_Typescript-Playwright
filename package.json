@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "allUItest": "npx playwright test ./uitest/*.test.ts"
+    "allUItest": "npx playwright test ./uitest_noCucumber/*.test.ts",
+    "test-ui": "cucumber-js ./uitest_withCucumber/*.feature --require uitest_withCucumber/*.ts"
   },
   "keywords": [],
   "author": "",
