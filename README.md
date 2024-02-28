@@ -42,3 +42,13 @@ VSCODE:
 - git push -u origin main
 
 // debug --> git remote remove origin
+
+
+// Making allure for all tests
+npm install -g allure-commandline
+npm install --save-dev mocha-allure-reporter
+mocha --reporter mocha-allure-reporter
+
+Run All Tests: Run all your tests as you normally would. Ensure that each test execution is generating Allure results. These results are usually XML files stored in a directory (by default, this is allure-results in your project root).
+
+allure serve
