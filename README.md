@@ -25,13 +25,6 @@ npx playwright test github-search.test.ts
 --> need to run to download Chromium
 npx playwright install
 
-Setup Allure:
-npm i -D playwright @playwright/test
-npm i -D experimental-allure-playwright
-npm i -D allure-commandline
-
-sudo npm install playwright @playwright/test experimental-allure-playwright allure-commandline --save-dev
-
 Setting-up new Repo:
 VSCODE: 
 - Stage your files for commit:
@@ -51,4 +44,14 @@ mocha --reporter mocha-allure-reporter
 
 Run All Tests: Run all your tests as you normally would. Ensure that each test execution is generating Allure results. These results are usually XML files stored in a directory (by default, this is allure-results in your project root).
 
+
+Setup Allure:
+npm i -D playwright @playwright/test
+npm i -D experimental-allure-playwright
+npm i -D allure-commandline
+
+sudo npm install playwright @playwright/test experimental-allure-playwright allure-commandline --save-dev
+
 allure serve
+
+npx playwright test github-search.test.ts --reporter=line,experimental-allure-playwright
